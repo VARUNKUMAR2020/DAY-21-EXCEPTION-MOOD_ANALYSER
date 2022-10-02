@@ -3,25 +3,24 @@ package MoodAnalyser;
 import java.util.Scanner;
 
 public class MoodAnalyser {
-	// CONSTRUCTOR WITHOUT PARAMETER
-	public MoodAnalyser() {
-		checkmood("i am in sad mood");
-	}
-
-	public static String checkmood(String mood) {
-		if (mood.toLowerCase().contains("happy")) {
-			System.out.println("HAPPY MOOD");
-			return "SAD";
-		} else {
-			System.out.println("SAD MOOD");
+	public static String nullPointer(String Mood ) {
+		try {
+			if (Mood.toLowerCase().contains("happy"))
+				System.out.println("HAPPY MOOD");
+			else
+				System.out.println("SAD MOOD");
+		} catch (NullPointerException e) { 
+			System.out.println("HAPPY");
 		}
-		return "SAD";
+		    return "HAPPY";
+		
 	}
 
 	public static void main(String[] args) {
 		System.out.println("EXCEPTION HANDLING");
-		// CALLING CONSTRUCTOR WITHOUT PARAMETER
-		MoodAnalyser checkMood = new MoodAnalyser();
+		String myMood = null;
+		nullPointer(myMood);
 
 	}
 }
+
