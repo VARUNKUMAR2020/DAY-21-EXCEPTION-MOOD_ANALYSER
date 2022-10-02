@@ -3,13 +3,26 @@ package MoodAnalyser;
 import java.util.Scanner;
 
 public class MoodAnalyser {
-	static String analyseMood(String checkmood) {
+	// CONSTRUCTOR WITHOUT PARAMETER
+	public MoodAnalyser() {
+		Scanner analyse = new Scanner(System.in);
+		System.out.println("ENTER THE MOOD YOUR:  ");
+		String checkmood = analyse.nextLine();
 		if (checkmood.toLowerCase().contains("happy")) {
 			System.out.println("HAPPY MOOD");
 		} else {
 			System.out.println("SAD MOOD");
 		}
-		return "HAPPY";
+
+	}
+
+	// CONSTRUCTOR WITH PARAMETER
+	public MoodAnalyser(String checkmood) {
+		if (checkmood.toLowerCase().contains("happy")) {
+			System.out.println("HAPPY MOOD");
+		} else {
+			System.out.println("SAD MOOD");
+		}
 	}
 
 	public static void main(String[] args) {
@@ -17,6 +30,10 @@ public class MoodAnalyser {
 		Scanner analyse = new Scanner(System.in);
 		System.out.println("ENTER THE MOOD YOUR:  ");
 		String Mood = analyse.nextLine();
-		analyseMood(Mood);
+		// CALLING CONSTRUCTOR WITH PARAMETER
+		MoodAnalyser checkmood = new MoodAnalyser(Mood);
+		// CALLING CONSTRUCTOR WITHOUT PARAMETER
+		MoodAnalyser checkMood = new MoodAnalyser();
+
 	}
 }
